@@ -5,5 +5,4 @@
 #     pip install -r requirements.pip
 
 django==1.4
-django-supervisor
 #south==0.7.5
