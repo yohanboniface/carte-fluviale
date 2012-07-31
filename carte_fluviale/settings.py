@@ -38,7 +38,6 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.gis',
     'chickpea',
-    'django_browserid'
 )
 
 #==============================================================================
