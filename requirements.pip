@@ -5,6 +5,6 @@
 #     pip install -r requirements.pip
 
 django==1.4
-psycopg2=2.4.5
+psycopg2==2.4.5
 git+git://github.com/yohanboniface/django-chickpea.git
 #south==0.7.5
