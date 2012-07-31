@@ -1,0 +1,12 @@
+*.pyc
+*.pyo
+*.swp
+*.lock
+*.pid
+*.DS_Store
+*.svn
+*.pdg
+*.orig
+*~
+doc/_build/*
+carte_fluviale/conf/local/*
