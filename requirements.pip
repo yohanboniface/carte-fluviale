@@ -5,4 +5,5 @@
 #     pip install -r requirements.pip
 
 django==1.4
+git+git://github.com/yohanboniface/django-chickpea.git
 #south==0.7.5
