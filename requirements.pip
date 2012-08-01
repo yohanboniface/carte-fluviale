@@ -7,5 +7,7 @@
 django==1.4
 PIL
 psycopg2==2.4.5
+circus
+chaussette
 git+git://github.com/yohanboniface/django-chickpea.git
 #south==0.7.5
