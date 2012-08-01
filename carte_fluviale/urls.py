@@ -7,6 +7,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 from chickpea.urls import urlpatterns
+from chickpea.views import MapView
 
 urls_to_decorate = {
     "marker_update": permission_required('marker.can_change'),
@@ -18,6 +19,7 @@ for urlpattern in urlpatterns:
         urlpattern._callback = urls_to_decorate[urlpattern.name](urlpattern.callback)
 
 urlpatterns += patterns('',
+    url(r'^$', MapView.as_view(), {"slug": "fluvial"}, name='fluvial_map'),
     # Examples:
     # url(r'^$', 'heron.views.home', name='home'),
     # url(r'^/', include('chickpea.urls')),
