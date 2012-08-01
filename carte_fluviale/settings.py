@@ -100,7 +100,6 @@ TEMPLATE_DIRS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS += (
-    'django_browserid.context_processors.browserid_form',
     'django.core.context_processors.request',
 )
 
@@ -116,7 +115,6 @@ MIDDLEWARE_CLASSES += (
 #==============================================================================
 
 AUTHENTICATION_BACKENDS += (
-    'django_browserid.auth.BrowserIDBackend',
 )
 
 #==============================================================================
