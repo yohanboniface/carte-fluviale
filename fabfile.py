@@ -191,12 +191,26 @@ def restart():
 
 @task
 @roles('web', 'db')
-def requirements():
+def requirements(name=None, upgrade=False):
     """
     Update the requirements.
     """
-    run('{virtualenv_dir}/bin/pip install -r {project_dir}/{requirements_file}'\
-        .format(**env))
+    base_command = '{virtualenv_dir}/bin/pip install'.format(virtualenv_dir=env.virtualenv_dir)
+    if upgrade:
+        base_command += ' --upgrade'
+    if not name:
+        kwargs = {
+            "base_command": base_command,
+            "project_dir": env.project_dir,
+            "requirements_file": env.requirements_file,
+        }
+        run('{base_command} -r {project_dir}/{requirements_file}'\
+        .format(**kwargs))
+    else:
+        run('{base_command} {name}'.format(
+            base_command=base_command,
+            name=name
+        ))
 
 
 #==============================================================================
