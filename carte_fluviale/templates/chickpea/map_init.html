@@ -15,6 +15,9 @@
         {% endif %}
         {% if request.user.is_authenticated %}
             map_settings.allowEdit = true;
+            map_settings.editOptions = {
+                "polyline": null
+            }
         {% endif %}
         var MAP = new L.ChickpeaMap("map", map_settings);
     </script>
