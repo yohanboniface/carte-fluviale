@@ -13,11 +13,9 @@
         {% if map.locate %}
             map_settings.locate = {"setView": true}
         {% endif %}
-        {% if request.user.is_authenticated %}
-            map_settings.allowEdit = true;
-            map_settings.editOptions = {
-                "polyline": null
-            }
-        {% endif %}
+        map_settings.allowEdit = true;
+        map_settings.editOptions = {
+            "polyline": null
+        }
         var MAP = new L.ChickpeaMap("map", map_settings);
     </script>
