@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.gis',
     'chickpea',
+    'compressor',
 )
 
 #==============================================================================
@@ -92,7 +93,9 @@ STATICFILES_DIRS = (
     # Fabric will collect leaflet and draw in this dir
     os.path.join(PROJECT_DIR, 'remote_static'),
 )
-
+STATICFILES_FINDERS += (
+    'compressor.finders.CompressorFinder',
+)
 #==============================================================================
 # Templates
 #==============================================================================
@@ -126,3 +129,5 @@ AUTHENTICATION_BACKENDS += (
 #==============================================================================
 # Third party app settings
 #==============================================================================
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = True

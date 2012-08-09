@@ -1,6 +1,6 @@
 from carte_fluviale.settings import *   # pylint: disable=W0614,W0401
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 

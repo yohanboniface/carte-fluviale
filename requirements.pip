@@ -11,3 +11,7 @@ circus
 chaussette
 git+git://github.com/yohanboniface/django-chickpea.git
 #south==0.7.5
+django-compressor
+# For django compressor:
+lxml
+beautifulsoup
