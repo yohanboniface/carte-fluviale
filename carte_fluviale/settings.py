@@ -24,8 +24,6 @@ LANGUAGES = (
 SECRET_KEY = '6sri@3d*w*cg_yedxg#jvpf1^ikg&amp;82^4nr7s&amp;1he0!zm2!y7t'
 
 INSTALLED_APPS = (
-    # 'carte_fluviale.apps.',
-
     #'south',
 
     'django.contrib.auth',
