@@ -1,0 +1,10 @@
+<form method="post" action="{{ action }}" id="marker_form" onsubmit="return false;">
+    {% csrf_token %}
+    {{ form.errors }}
+    {# Hardcoding input and textarea to add placeholder (without overriding the form) #}
+    <p><input type="text" id="id_name" name="{{ form.name.html_name }}" value="{{ form.name.value|default:""|escape }}" placeholder="Tapez ici le titre" autocomplete="off" /></p>
+    <p><textarea id="id_description" rows="10" name="{{ form.description.html_name }}" placeholder="Taper ici la description">{{ form.description.value|default:"" }}</textarea></p>
+    <p>{{ form.category }}</p>
+    <input type="hidden" name="{{ form.latlng.html_name }}" value="{{ form.latlng.value }}" />
+    <input type="submit" />
+</form>
