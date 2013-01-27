@@ -9,7 +9,8 @@ PIL
 psycopg2==2.4.5
 circus
 chaussette
-git+git://github.com/yohanboniface/django-chickpea.git
+git+git://github.com/yohanboniface/django-leaflet-storage.git
+git+git://github.com/yohanboniface/vectorformats.git@leafletstorage
 #south==0.7.5
 django-compressor
 # For django compressor:
