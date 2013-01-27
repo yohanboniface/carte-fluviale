@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load leaflet_storage_tags compress %}
+{% block title %}{{ map.name }}{% endblock %}
+{% block body_class %}map_detail{% endblock %}
+
+{% block extra_head %}
+    {{ block.super }}
+    {% compress css %}
+        {% leaflet_storage_css %}
+        <link rel="stylesheet" href="{{ STATIC_URL }}storage/contrib/css/storage.ui.default.css">
+    {% endcompress css %}
+    {% compress js %}
+        {% leaflet_storage_js %}
+        <script src="{{ STATIC_URL }}storage/src/locale/fr.js"></script>
+        <script src="{{ STATIC_URL }}storage/contrib/js/storage.ui.default.js"></script>
+    {% endcompress js %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+{% endblock %}
+
+{% block content %}
+    {% block map_init %}
+        {% include "leaflet_storage/map_init.html" %}
+    {% endblock %}
+    <div id="storage-ui-container"></div>
+    <div id="storage-alert-container"></div>
+    <div id="storage-tooltip-container"></div>
+{% endblock %}

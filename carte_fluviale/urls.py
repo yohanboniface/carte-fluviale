@@ -6,8 +6,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 admin.autodiscover()
 
-from chickpea.urls import urlpatterns
-from chickpea.views import MapView
+from leaflet_storage.urls import urlpatterns
+from leaflet_storage.views import MapView
 
 # urls_to_decorate = {
 #     "marker_update": permission_required('marker.can_change'),
@@ -19,15 +19,7 @@ from chickpea.views import MapView
 #         urlpattern._callback = urls_to_decorate[urlpattern.name](urlpattern.callback)
 
 urlpatterns += patterns('',
-    url(r'^$', MapView.as_view(), {"slug": "fluvial"}, name='fluvial_map'),
-    # Examples:
-    # url(r'^$', 'heron.views.home', name='home'),
-    # url(r'^/', include('chickpea.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
+    url(r'^$', MapView.as_view(), {"slug": "fluvial", "username": "ybon"}, name='fluvial_map'),
     url(r'^poupe/', include(admin.site.urls)),
 )
 urlpatterns += staticfiles_urlpatterns()

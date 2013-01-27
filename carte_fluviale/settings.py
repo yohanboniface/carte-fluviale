@@ -24,7 +24,7 @@ LANGUAGES = (
 SECRET_KEY = '6sri@3d*w*cg_yedxg#jvpf1^ikg&amp;82^4nr7s&amp;1he0!zm2!y7t'
 
 INSTALLED_APPS = (
-    #'south',
+    'south',
 
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -35,7 +35,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.gis',
-    'chickpea',
+    'leaflet_storage',
     'compressor',
 )
 
@@ -129,3 +129,4 @@ AUTHENTICATION_BACKENDS += (
 #==============================================================================
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
+LOGIN_URL = "login"
