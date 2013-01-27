@@ -11,7 +11,7 @@ circus
 chaussette
 git+git://github.com/yohanboniface/django-leaflet-storage.git
 git+git://github.com/yohanboniface/vectorformats.git@leafletstorage
-#south==0.7.5
+south
 django-compressor
 # For django compressor:
 lxml
