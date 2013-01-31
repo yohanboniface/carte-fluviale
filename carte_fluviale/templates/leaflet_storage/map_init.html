@@ -19,10 +19,17 @@
             "enableMarkerDraw": {{ enableMarkerDraw }},
             "enablePolylineDraw": {{ enablePolylineDraw }},
             "enablePolygonDraw": {{ enablePolygonDraw }},
-            "editInOSMControl": {{ editInOSMControl }}
+            "editInOSMControl": {{ editInOSMControl }},
+            "scaleControl": {{ scaleControl }}
         }
         {% if locateOnLoad %}
             map_settings['locate'] = {"setView": true}
         {% endif %}
         var MAP = new L.Storage.Map("map", map_settings);
+        L.tileLayer('http://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, sea marks <a href="http://openseamap.org">OpenSeaMap</a>',
+            maxZoom: 18,
+            minZoom: 12,
+            zIndex: 1000
+        }).addTo(MAP);
     </script>
