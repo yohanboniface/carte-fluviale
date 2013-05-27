@@ -47,6 +47,8 @@ var RevealOSM = L.Control.RevealOSM.extend({
             case 6:
             case 7:
             case 8:
+                radius = 800;
+                break;
             case 9:
                 radius = 600;
                 break;
