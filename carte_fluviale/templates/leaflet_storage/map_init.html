@@ -1,10 +1,5 @@
     <div id="map"></div>
     <script type="text/javascript">
         var MAP = new L.Storage.Map("map", {{ map_settings|safe }});
-        L.tileLayer('http://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
-            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, sea marks <a href="http://openseamap.org">OpenSeaMap</a>',
-            maxZoom: 18,
-            minZoom: 10,
-            zIndex: 1000
-        }).addTo(MAP);
+        MAP.revealOSMControl = (new RevealOSM()).addTo(MAP);
     </script>

@@ -251,15 +251,17 @@ def collect_remote_statics():
     remote_static_dir = '{project_dir}/{project_name}/remote_static'.format(**env)
     run('mkdir -p {0}'.format(remote_static_dir))
     remote_repositories = {
-        'leaflet': "git://github.com/Leaflet/Leaflet.git",
-        'draw': "git://github.com/Leaflet/Leaflet.draw.git",
-        'hash': "git://github.com/mlevans/leaflet-hash.git",
-        'storage': 'git://github.com/yohanboniface/Leaflet.Storage.git',
-        'edit_in_osm': 'git://github.com/yohanboniface/Leaflet.EditInOSM.git',
-        'minimap': 'git://github.com/Norkart/Leaflet-MiniMap.git',
+        'leaflet': "git://github.com/Leaflet/Leaflet.git@master",
+        'draw': "git://github.com/Leaflet/Leaflet.draw.git@master",
+        'hash': "git://github.com/mlevans/leaflet-hash.git@master",
+        'storage': 'git://github.com/yohanboniface/Leaflet.Storage.git@master',
+        'edit_in_osm': 'git://github.com/yohanboniface/Leaflet.EditInOSM.git@master',
+        'reveal_osm': 'git://github.com/yohanboniface/Leaflet.RevealOSM.git@master',
+        'minimap': 'git://github.com/Norkart/Leaflet-MiniMap.git@master',
     }
     with cd(remote_static_dir):
-        for subdir, repository in remote_repositories.iteritems():
+        for subdir, path in remote_repositories.iteritems():
+            repository, branch = path.split('@')
             with hide("running", "stdout"):
                 exists = run('if [ -d "{0}" ]; then echo 1; fi'.format(subdir))
             if exists:
@@ -267,3 +269,5 @@ def collect_remote_statics():
                     run('git pull')
             else:
                 run('git clone {0} {1}'.format(repository, subdir))
+            with cd(subdir):
+                run('git checkout {0}'.format(branch))

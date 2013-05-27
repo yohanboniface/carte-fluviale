@@ -8,11 +8,15 @@
     {% compress css %}
         {% leaflet_storage_css %}
         <link rel="stylesheet" href="{{ STATIC_URL }}storage/contrib/css/storage.ui.default.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}reveal_osm/Leaflet.RevealOSM.css" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}carte_fluviale/carte_fluviale.css" />
     {% endcompress css %}
     {% compress js %}
         {% leaflet_storage_js %}
+        <script src="{{ STATIC_URL }}reveal_osm/Leaflet.RevealOSM.js"></script>
         <script src="{{ STATIC_URL }}storage/src/locale/fr.js"></script>
         <script src="{{ STATIC_URL }}storage/contrib/js/storage.ui.default.js"></script>
+        <script src="{{ STATIC_URL }}carte_fluviale/CustomRevealOSM.js"></script>
     {% endcompress js %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 {% endblock %}
