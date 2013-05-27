@@ -27,7 +27,7 @@ var RevealOSM = L.Control.RevealOSM.extend({
 
     getQueryTemplate: function () {
         var template;
-        if (this._map.getZoom() < 13) {
+        if (this._map.getZoom() < 11) {
             template = '[out:json];node(around:{radius},{lat},{lng})[harbour];out body qt 1;';
         }
         else {
@@ -37,7 +37,38 @@ var RevealOSM = L.Control.RevealOSM.extend({
     },
 
     getRadius: function () {
-        return this.options.radius || 300 - (15 * this._map.getZoom());
+        var radius = 100;
+        switch (this._map.getZoom()) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+                radius = 600;
+                break;
+            case 10:
+            case 11:
+            case 12:
+                radius = 400;
+                break;
+            case 13:
+            case 14:
+                radius = 300;
+                break;
+            case 15:
+            case 16:
+                radius = 50;
+                break;
+            case 17:
+            case 18:
+                radius = 30;
+                break;
+        }
+        return radius;
     },
 
     formatTitle: function (element) {
