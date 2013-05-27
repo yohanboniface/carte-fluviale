@@ -257,6 +257,7 @@ def collect_remote_statics():
         'storage': 'git://github.com/yohanboniface/Leaflet.Storage.git@master',
         'edit_in_osm': 'git://github.com/yohanboniface/Leaflet.EditInOSM.git@master',
         'reveal_osm': 'git://github.com/yohanboniface/Leaflet.RevealOSM.git@master',
+        'i18n': 'git://github.com/yohanboniface/Leaflet.i18n.git@master',
         'minimap': 'git://github.com/Norkart/Leaflet-MiniMap.git@master',
     }
     with cd(remote_static_dir):
